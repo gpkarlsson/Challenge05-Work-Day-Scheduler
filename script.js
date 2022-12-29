@@ -7,8 +7,6 @@ console.log(dayjs().hour());
 $(function () {
 
 
-  //event listener -> onclick saveButton -> save to Local Storage
-
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -22,17 +20,37 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. 
-
-  //function hoursCheck() {
+  // TODO: Add code to apply the past, present, or future class to each time block by comparing the id to the current hour. 
 
   var currentHour = dayjs().hour();
-  //var idHour = document.getElementsByClassName('hour');
-  //var hours = ['9', '10', '11', '12', '13', '14', '15', '16', '17'] 
 
   var hour9 = document.getElementById('hour-9');
   var am900 = 9;
+
+  var hour10 = document.getElementById('hour-11');
+  var am1000= 10;
+
+  var hour11 = document.getElementById('hour-11');
+  var am1100= 11;
+
+  var hour12 = document.getElementById('hour-12');
+  var pm1200 = 12;
+
+  var hour13 = document.getElementById('hour-13');
+  var pm1300 = 13;
+
+  var hour14 = document.getElementById('hour-14');
+  var pm1400 = 14;
+  
+  var hour15 = document.getElementById('hour-15');
+  var pm1500 = 15;
+
+  var hour16 = document.getElementById('hour-16');
+  var pm1600 = 16;
+  
+  var hour17 = document.getElementById('hour-17');
+  var pm1700 = 17;
+
 
   if (am900 < currentHour) {
     hour9.classList.add('past');
@@ -42,9 +60,6 @@ $(function () {
     hour9.classList.add('future');
   };
 
-  var hour10 = document.getElementById('hour-10');
-  var am1000 = 10;
-
   if (am1000 < currentHour) {
     hour10.classList.add('past');
   } else if (currentHour === am1000) {
@@ -52,9 +67,6 @@ $(function () {
   } else {
     hour10.classList.add('future');
   }
-
-  var hour11 = document.getElementById('hour-11');
-  var am1100= 11;
 
   if (am1100 < currentHour) {
     hour11.classList.add('past');
@@ -64,9 +76,6 @@ $(function () {
     hour11.classList.add('future');
   }
 
-  var hour12 = document.getElementById('hour-12');
-  var pm1200 = 12;
-  
     if (pm1200 < currentHour) {
       hour12.classList.add('past');
     } else if (currentHour === pm1200) {
@@ -74,9 +83,6 @@ $(function () {
     } else {
       hour12.classList.add('future');
     }
-    
-    var hour13 = document.getElementById('hour-13');
-    var pm1300= 13;
 
   if (pm1300 < currentHour) {
     hour13.classList.add('past');
@@ -86,9 +92,6 @@ $(function () {
     hour13.classList.add('future');
   }
 
-var hour14 = document.getElementById('hour-14');
-var pm1400 = 14;
-
   if (pm1400 < currentHour) {
     hour14.classList.add('past');
   } else if (currentHour === pm1400) {
@@ -96,9 +99,6 @@ var pm1400 = 14;
   } else {
     hour14.classList.add('future');
   }
-
-  var hour15 = document.getElementById('hour-15');
-  var pm1500 = 15;
 
   if (pm1500 < currentHour) {
     hour15.classList.add('past');
@@ -108,9 +108,6 @@ var pm1400 = 14;
     hour15.classList.add('future');
   }
 
-var hour16 = document.getElementById('hour-16');
-var pm1600 = 16;
-
  if (pm1600 < currentHour) {
     hour16.classList.add('past');
   } else if (currentHour === pm1600) {
@@ -119,9 +116,6 @@ var pm1600 = 16;
     hour16.classList.add('future');
   }
 
-  var hour17 = document.getElementById('hour-17');
-  var pm1700 = 17;
-
  if (pm1700 < currentHour) {
     hour17.classList.add('past');
   } else if (currentHour === pm1700) {
@@ -129,11 +123,6 @@ var pm1600 = 16;
   } else {
     hour17.classList.add('future');
   }
-
-
-  // if (idHour > currentHour) {
-  //hour-9.classList.add('past')
-  //}
 
   //HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
@@ -151,14 +140,19 @@ var pm1600 = 16;
   document.getElementById('timeNow').textContent = currentDay;
 });
 
+//! $('.saveBtn').click(function (event) {
+//!  event.preventDefault();
+//   //prevent default behavior right away
+//! FINISH })
+
 //SOLVE LOADING PROBLEM FIRST!!!
 
-// 1. Get current date and display in hero div
-// 2. compare current time to each hour div on scheduler
-// 3. if current time = specific hour --> add present class, remove past/future (if needed)
-// 3. if current time < (before) specific hour --> add future class, remove present/past (if needed)
-// 4. if current time > (after) specific hour --> add past class, remove present/future (if needed)
-// 5. click save button stores value of inputted text on click in local storage (persists on page refresh)
+// * 1. Get current date and display in hero div DONE
+// * 2. compare current time to each hour div on scheduler
+// * 3. if current time = specific hour --> add present class, remove past/future (if needed)
+// * 3. if current time < (before) specific hour --> add future class, remove present/past (if needed)
+// * 4. if current time > (after) specific hour --> add past class, remove present/future (if needed)
+// ? 5. click save button stores value of inputted text on click in local storage (persists on page refresh)
 
 // for loop to check for hour
 //put data attributes on each - time blocks for each when you click on the save
