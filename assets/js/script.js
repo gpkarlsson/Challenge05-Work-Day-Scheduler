@@ -9,13 +9,18 @@ $(function () {
   var hourDivContainer = document.getElementById('hourDiv');
   var hourTextAreas = hourDivContainer.getElementsByClassName('description');
   var saveBtn = document.getElementById('hourDiv').getElementsByClassName('saveBtn');
-  
   saveBtn.addEventListener('click', saveEnteredText());
-  
+ //! FIX ERROR LINE 12
+  // function preventDefault() {
+  //   event.preventDefault();
+  // }
   function saveEnteredText() {
-    var scheduledEvent = hourTextAreas.querySelectorAll('.description').value;
+    var scheduledEvent = document.querySelectorAll('.description').value;
     localStorage.setItem('event', scheduledEvent)
   }
+
+  
+  // localStorage.getItem('event', scheduledEvent);
 //let hourArray = ['hour-9', 'hour-10','hour-11', 'hour-12', 'hour-13', 'hour-14', 'hour-15', 'hour-16', 'hour-17']
 
   // HINT: What does `this` reference in the click listener
