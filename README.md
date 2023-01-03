@@ -8,3 +8,6 @@ MIT License
 
 ## Deployed Link
 https://gpkarlsson.github.io/Challenge05-Work-Day-Scheduler/
+
+## Screenshot
+![A screenshot of a work day scheduler web page with the hour 5pm highlighted in red and "Daily Scrum Call with Software Development Team" written in the 9AM text area](https://github.com/gpkarlsson/Challenge05-Work-Day-Scheduler/blob/main/assets/ScreenshotChall05.png)
