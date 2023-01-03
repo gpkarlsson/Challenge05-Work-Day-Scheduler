@@ -6,7 +6,7 @@ $(function () {
   var hour9 = document.getElementById('hour-9');
   var am900 = 9;
 
-  var hour10 = document.getElementById('hour-11');
+  var hour10 = document.getElementById('hour-10');
   var am1000 = 10;
 
   var hour11 = document.getElementById('hour-11');
