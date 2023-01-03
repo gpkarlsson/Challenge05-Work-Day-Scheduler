@@ -4,9 +4,9 @@ body {
 }
 
 .hero {
-background-color: rgb(20, 20, 199);
-color: white;
-text-align: center;
+  background-color: rgb(20, 20, 199);
+  color: white;
+  text-align: center;
 }
 
 textarea {
