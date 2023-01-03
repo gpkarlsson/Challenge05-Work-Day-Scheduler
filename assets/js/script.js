@@ -5,30 +5,11 @@ console.log(dayjs().hour());
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-
-  var hourDivContainer = document.getElementById('hourDiv');
-  var hourTextAreas = hourDivContainer.getElementsByClassName('description');
-  var saveBtn = document.getElementById('hourDiv').getElementsByClassName('saveBtn');
-  saveBtn.addEventListener('click', saveEnteredText());
- //! FIX ERROR LINE 12
-  // function preventDefault() {
-  //   event.preventDefault();
-  // }
-  function saveEnteredText() {
-    var scheduledEvent = document.querySelectorAll('.description').value;
-    localStorage.setItem('event', scheduledEvent)
-  }
-
-  
-  // localStorage.getItem('event', scheduledEvent);
-//let hourArray = ['hour-9', 'hour-10','hour-11', 'hour-12', 'hour-13', 'hour-14', 'hour-15', 'hour-16', 'hour-17']
-
   // HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  // TODO: Add code to apply the past, present, or future class to each time block by comparing the id to the current hour. 
 
   var currentHour = dayjs().hour();
 
@@ -148,6 +129,13 @@ document.getElementById('timeNow').textContent = currentDay;
 });
 
 
+$(document).ready(function() {
+  $('.saveBtn').on('click', function () {
+    var task = $(this).siblings('.description').val();
+    var hour = $(this).parent().attr('id');
+    localStorage.setItem(hour, task);
+  });
+})
 //SOLVE LOADING PROBLEM FIRST!!!
 
 // * 1. Get current date and display in hero div DONE
@@ -155,7 +143,7 @@ document.getElementById('timeNow').textContent = currentDay;
 // * 3. if current time = specific hour --> add present class, remove past/future (if needed)
 // * 3. if current time < (before) specific hour --> add future class, remove present/past (if needed)
 // * 4. if current time > (after) specific hour --> add past class, remove present/future (if needed)
-// TODO: 5. click save button stores value of inputted text on click in local storage (persists on page refresh)
+// * 5. click save button stores value of inputted text on click in local storage (persists on page refresh)
 
 // for loop to check for hour
 //put data attributes on each - time blocks for each when you click on the save
